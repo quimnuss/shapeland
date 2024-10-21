@@ -14,7 +14,7 @@ config/name="New Game Project"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[rendering]
+[layer_names]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+3d_physics/layer_1="World"
+3d_physics/layer_2="Player"

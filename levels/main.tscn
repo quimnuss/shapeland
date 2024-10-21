@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkby25hdrduq1"]
+
+[ext_resource type="Texture2D" uid="uid://c02a68p116sms" path="res://assets/hollow_knight.png" id="1_8bm1y"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_akae6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ek2ny"]
+
+[node name="Main" type="Node"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_akae6")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45159, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_ek2ny")
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+texture = ExtResource("1_8bm1y")
+hframes = 12
+vframes = 12
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127856, 1.58897, 1.8414)
